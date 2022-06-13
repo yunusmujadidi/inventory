@@ -49,7 +49,7 @@ Route::name('api.')
 
         Route::apiResource('barangs', BarangController::class);
 
-        // Barang Barang Masuks
+        // Barang Barang Masuk
         Route::get('/barangs/{barang}/barang-masuks', [
             BarangBarangMasuksController::class,
             'index',
@@ -59,7 +59,7 @@ Route::name('api.')
             'store',
         ])->name('barangs.barang-masuks.store');
 
-        // Barang Barang Keluars
+        // Barang Barang Keluar
         Route::get('/barangs/{barang}/barang-keluars', [
             BarangBarangKeluarsController::class,
             'index',
@@ -71,7 +71,7 @@ Route::name('api.')
 
         Route::apiResource('suppliers', SupplierController::class);
 
-        // Supplier Barang Masuks
+        // Supplier Barang Masuk
         Route::get('/suppliers/{supplier}/barang-masuks', [
             SupplierBarangMasuksController::class,
             'index',
@@ -87,7 +87,7 @@ Route::name('api.')
 
         Route::apiResource('kategoris', KategoriController::class);
 
-        // Kategori Barangs
+        // Kategori Barang
         Route::get('/kategoris/{kategori}/barangs', [
             KategoriBarangsController::class,
             'index',
@@ -97,7 +97,7 @@ Route::name('api.')
             'store',
         ])->name('kategoris.barangs.store');
 
-        // Kategori Suppliers
+        // Kategori Supplier
         Route::get('/kategoris/{kategori}/suppliers', [
             KategoriSuppliersController::class,
             'index',
@@ -109,7 +109,7 @@ Route::name('api.')
 
         Route::apiResource('lokasis', LokasiController::class);
 
-        // Lokasi Barangs
+        // Lokasi Barang
         Route::get('/lokasis/{lokasi}/barangs', [
             LokasiBarangsController::class,
             'index',
@@ -119,7 +119,7 @@ Route::name('api.')
             'store',
         ])->name('lokasis.barangs.store');
 
-        // Lokasi Barang Keluars
+        // Lokasi Barang Keluar
         Route::get('/lokasis/{lokasi}/barang-keluars', [
             LokasiBarangKeluarsController::class,
             'index',
@@ -131,7 +131,7 @@ Route::name('api.')
 
         Route::apiResource('mereks', MerekController::class);
 
-        // Merek Barangs
+        // Merek Barang
         Route::get('/mereks/{merek}/barangs', [
             MerekBarangsController::class,
             'index',

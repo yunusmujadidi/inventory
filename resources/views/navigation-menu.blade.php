@@ -16,6 +16,71 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                 </div>
+                
+                 @can('view-any', App\Models\Barang::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('barangs.index') }}">
+                        Barang
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
+                 @can('view-any', App\Models\Supplier::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('suppliers.index') }}">
+                        Supplier
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
+                 @can('view-any', App\Models\BarangMasuk::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('barang-masuks.index') }}">
+                        Barang Masuk
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
+                 @can('view-any', App\Models\BarangKeluar::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('barang-keluars.index') }}">
+                        Barang Keluar
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
+                 @can('view-any', App\Models\Kategori::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('kategoris.index') }}">
+                        Kategori
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
+                 @can('view-any', App\Models\Lokasi::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('lokasis.index') }}">
+                        Lokasi
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
+                 @can('view-any', App\Models\Merek::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('mereks.index') }}">
+                        Merek
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
+                 @can('view-any', App\Models\User::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('users.index') }}">
+                        User
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+                
 
                 <x-nav-dropdown title="Apps" align="right" width="48">
                         @can('view-any', App\Models\Barang::class)
