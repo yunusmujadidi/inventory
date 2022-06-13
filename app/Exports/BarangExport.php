@@ -2,16 +2,16 @@
 
 namespace App\Exports;
 
-use App\Models\BarangKeluar;
+use App\Models\Barang;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
-class BarangKeluarExport implements FromCollection
+class BarangExport implements FromCollection
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function collection()
     {
-        return BarangKeluar::all();
+        return Barang::all();
     }
 }
