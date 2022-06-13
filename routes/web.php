@@ -49,4 +49,11 @@ Route::prefix('/')
         Route::resource('lokasis', LokasiController::class);
         Route::resource('mereks', MerekController::class);
         Route::resource('users', UserController::class);
+
+        //Route::get('/barang-keluars', 'BarangKeluarController@index');
+        //Route::get('/barang-keluars/export_excel', 'BarangKeluarController@export_excel');
+
+        Route::get('export-csv', function () {
+            return Excel::download(new BarangKeluarExport, 'barangkeluar.csv');
+        });
     });
