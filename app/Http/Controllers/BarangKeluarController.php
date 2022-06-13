@@ -34,7 +34,7 @@ class BarangKeluarController extends Controller
         );
     }
 
-    public function export_excel()
+    public function export()
 	{
 		return Excel::download(new BarangKeluarExport, 'barangkeluar.xlsx');
 	}
