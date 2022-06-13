@@ -17,7 +17,7 @@ class KategoriSuppliersController extends Controller
      */
     public function index(Request $request, Kategori $kategori)
     {
-        $this->authorize('view', $kategori);
+        // $this->authorize('view', $kategori);
 
         $search = $request->get('search', '');
 
@@ -37,7 +37,7 @@ class KategoriSuppliersController extends Controller
      */
     public function store(Request $request, Kategori $kategori)
     {
-        $this->authorize('create', Supplier::class);
+        // $this->authorize('create', Supplier::class);
 
         $validated = $request->validate([
             'nama_supplier' => ['required', 'max:255', 'string'],

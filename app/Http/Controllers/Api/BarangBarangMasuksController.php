@@ -17,7 +17,7 @@ class BarangBarangMasuksController extends Controller
      */
     public function index(Request $request, Barang $barang)
     {
-        $this->authorize('view', $barang);
+        // $this->authorize('view', $barang);
 
         $search = $request->get('search', '');
 
@@ -37,7 +37,7 @@ class BarangBarangMasuksController extends Controller
      */
     public function store(Request $request, Barang $barang)
     {
-        $this->authorize('create', BarangMasuk::class);
+        // $this->authorize('create', BarangMasuk::class);
 
         $validated = $request->validate([
             'tanggal_masuk' => ['required', 'date'],

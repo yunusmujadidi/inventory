@@ -18,7 +18,7 @@ class KategoriController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Kategori::class);
+        // $this->authorize('view-any', Kategori::class);
 
         $search = $request->get('search', '');
 
@@ -35,7 +35,7 @@ class KategoriController extends Controller
      */
     public function store(KategoriStoreRequest $request)
     {
-        $this->authorize('create', Kategori::class);
+        // $this->authorize('create', Kategori::class);
 
         $validated = $request->validated();
 
@@ -51,7 +51,7 @@ class KategoriController extends Controller
      */
     public function show(Request $request, Kategori $kategori)
     {
-        $this->authorize('view', $kategori);
+        // $this->authorize('view', $kategori);
 
         return new KategoriResource($kategori);
     }
@@ -63,7 +63,7 @@ class KategoriController extends Controller
      */
     public function update(KategoriUpdateRequest $request, Kategori $kategori)
     {
-        $this->authorize('update', $kategori);
+        // $this->authorize('update', $kategori);
 
         $validated = $request->validated();
 
@@ -79,7 +79,7 @@ class KategoriController extends Controller
      */
     public function destroy(Request $request, Kategori $kategori)
     {
-        $this->authorize('delete', $kategori);
+        // $this->authorize('delete', $kategori);
 
         $kategori->delete();
 

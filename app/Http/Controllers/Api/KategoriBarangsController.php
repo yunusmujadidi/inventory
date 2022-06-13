@@ -17,7 +17,7 @@ class KategoriBarangsController extends Controller
      */
     public function index(Request $request, Kategori $kategori)
     {
-        $this->authorize('view', $kategori);
+        // $this->authorize('view', $kategori);
 
         $search = $request->get('search', '');
 
@@ -37,7 +37,7 @@ class KategoriBarangsController extends Controller
      */
     public function store(Request $request, Kategori $kategori)
     {
-        $this->authorize('create', Barang::class);
+        // $this->authorize('create', Barang::class);
 
         $validated = $request->validate([
             'kode_barang' => ['required', 'max:255'],
