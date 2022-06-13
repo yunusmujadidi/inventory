@@ -33,23 +33,17 @@ use App\Http\Controllers\Api\SupplierBarangMasuksController;
 |
 */
 
-Route::post('/login', [AuthController::class, 'login'])->name('api.login');
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
 
-Route::middleware('auth:sanctum')
-    ->get('/user', function (Request $request) {
-        return $request->user();
-    })
-    ->name('api.user');
 
-Route::name('api.')
-    ->middleware('auth:sanctum')
-    ->group(function () {
         Route::apiResource('roles', RoleController::class);
         Route::apiResource('permissions', PermissionController::class);
 
         Route::apiResource('barangs', BarangController::class);
 
-        // Barang Barang Masuk
+        // Barang Barang Masuks
         Route::get('/barangs/{barang}/barang-masuks', [
             BarangBarangMasuksController::class,
             'index',
@@ -59,7 +53,7 @@ Route::name('api.')
             'store',
         ])->name('barangs.barang-masuks.store');
 
-        // Barang Barang Keluar
+        // Barang Barang Keluars
         Route::get('/barangs/{barang}/barang-keluars', [
             BarangBarangKeluarsController::class,
             'index',
@@ -71,7 +65,7 @@ Route::name('api.')
 
         Route::apiResource('suppliers', SupplierController::class);
 
-        // Supplier Barang Masuk
+        // Supplier Barang Masuks
         Route::get('/suppliers/{supplier}/barang-masuks', [
             SupplierBarangMasuksController::class,
             'index',
@@ -87,7 +81,7 @@ Route::name('api.')
 
         Route::apiResource('kategoris', KategoriController::class);
 
-        // Kategori Barang
+        // Kategori Barangs
         Route::get('/kategoris/{kategori}/barangs', [
             KategoriBarangsController::class,
             'index',
@@ -97,7 +91,7 @@ Route::name('api.')
             'store',
         ])->name('kategoris.barangs.store');
 
-        // Kategori Supplier
+        // Kategori Suppliers
         Route::get('/kategoris/{kategori}/suppliers', [
             KategoriSuppliersController::class,
             'index',
@@ -109,7 +103,7 @@ Route::name('api.')
 
         Route::apiResource('lokasis', LokasiController::class);
 
-        // Lokasi Barang
+        // Lokasi Barangs
         Route::get('/lokasis/{lokasi}/barangs', [
             LokasiBarangsController::class,
             'index',
@@ -119,7 +113,7 @@ Route::name('api.')
             'store',
         ])->name('lokasis.barangs.store');
 
-        // Lokasi Barang Keluar
+        // Lokasi Barang Keluars
         Route::get('/lokasis/{lokasi}/barang-keluars', [
             LokasiBarangKeluarsController::class,
             'index',
@@ -131,7 +125,7 @@ Route::name('api.')
 
         Route::apiResource('mereks', MerekController::class);
 
-        // Merek Barang
+        // Merek Barangs
         Route::get('/mereks/{merek}/barangs', [
             MerekBarangsController::class,
             'index',
@@ -142,4 +136,9 @@ Route::name('api.')
         ])->name('mereks.barangs.store');
 
         Route::apiResource('users', UserController::class);
-    });
+ 
+
+
+
+
+

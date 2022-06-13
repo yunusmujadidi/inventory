@@ -18,7 +18,7 @@ class BarangController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Barang::class);
+        // $this->authorize('view-any', Barang::class);
 
         $search = $request->get('search', '');
 
@@ -35,7 +35,7 @@ class BarangController extends Controller
      */
     public function store(BarangStoreRequest $request)
     {
-        $this->authorize('create', Barang::class);
+        // $this->authorize('create', Barang::class);
 
         $validated = $request->validated();
 
@@ -51,7 +51,7 @@ class BarangController extends Controller
      */
     public function show(Request $request, Barang $barang)
     {
-        $this->authorize('view', $barang);
+        // $this->authorize('view', $barang);
 
         return new BarangResource($barang);
     }
@@ -63,7 +63,7 @@ class BarangController extends Controller
      */
     public function update(BarangUpdateRequest $request, Barang $barang)
     {
-        $this->authorize('update', $barang);
+        // $this->authorize('update', $barang);
 
         $validated = $request->validated();
 
@@ -79,7 +79,7 @@ class BarangController extends Controller
      */
     public function destroy(Request $request, Barang $barang)
     {
-        $this->authorize('delete', $barang);
+        // $this->authorize('delete', $barang);
 
         $barang->delete();
 

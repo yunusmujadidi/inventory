@@ -18,7 +18,7 @@ class SupplierController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Supplier::class);
+        // $this->authorize('view-any', Supplier::class);
 
         $search = $request->get('search', '');
 
@@ -35,7 +35,7 @@ class SupplierController extends Controller
      */
     public function store(SupplierStoreRequest $request)
     {
-        $this->authorize('create', Supplier::class);
+        // $this->authorize('create', Supplier::class);
 
         $validated = $request->validated();
 
@@ -51,7 +51,7 @@ class SupplierController extends Controller
      */
     public function show(Request $request, Supplier $supplier)
     {
-        $this->authorize('view', $supplier);
+        // $this->authorize('view', $supplier);
 
         return new SupplierResource($supplier);
     }
@@ -63,7 +63,7 @@ class SupplierController extends Controller
      */
     public function update(SupplierUpdateRequest $request, Supplier $supplier)
     {
-        $this->authorize('update', $supplier);
+        // $this->authorize('update', $supplier);
 
         $validated = $request->validated();
 
@@ -79,7 +79,7 @@ class SupplierController extends Controller
      */
     public function destroy(Request $request, Supplier $supplier)
     {
-        $this->authorize('delete', $supplier);
+        // $this->authorize('delete', $supplier);
 
         $supplier->delete();
 

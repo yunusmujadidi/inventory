@@ -17,7 +17,7 @@ class MerekBarangsController extends Controller
      */
     public function index(Request $request, Merek $merek)
     {
-        $this->authorize('view', $merek);
+        // $this->authorize('view', $merek);
 
         $search = $request->get('search', '');
 
@@ -37,7 +37,7 @@ class MerekBarangsController extends Controller
      */
     public function store(Request $request, Merek $merek)
     {
-        $this->authorize('create', Barang::class);
+        // $this->authorize('create', Barang::class);
 
         $validated = $request->validate([
             'kode_barang' => ['required', 'max:255'],

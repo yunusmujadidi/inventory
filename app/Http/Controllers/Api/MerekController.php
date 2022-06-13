@@ -18,7 +18,7 @@ class MerekController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Merek::class);
+        // $this->authorize('view-any', Merek::class);
 
         $search = $request->get('search', '');
 
@@ -35,7 +35,7 @@ class MerekController extends Controller
      */
     public function store(MerekStoreRequest $request)
     {
-        $this->authorize('create', Merek::class);
+        // $this->authorize('create', Merek::class);
 
         $validated = $request->validated();
 
@@ -51,7 +51,7 @@ class MerekController extends Controller
      */
     public function show(Request $request, Merek $merek)
     {
-        $this->authorize('view', $merek);
+        // $this->authorize('view', $merek);
 
         return new MerekResource($merek);
     }
@@ -63,7 +63,7 @@ class MerekController extends Controller
      */
     public function update(MerekUpdateRequest $request, Merek $merek)
     {
-        $this->authorize('update', $merek);
+        // $this->authorize('update', $merek);
 
         $validated = $request->validated();
 
@@ -79,7 +79,7 @@ class MerekController extends Controller
      */
     public function destroy(Request $request, Merek $merek)
     {
-        $this->authorize('delete', $merek);
+        // $this->authorize('delete', $merek);
 
         $merek->delete();
 

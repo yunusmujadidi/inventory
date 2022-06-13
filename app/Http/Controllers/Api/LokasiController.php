@@ -18,7 +18,7 @@ class LokasiController extends Controller
      */
     public function index(Request $request)
     {
-        $this->authorize('view-any', Lokasi::class);
+        // $this->authorize('view-any', Lokasi::class);
 
         $search = $request->get('search', '');
 
@@ -35,7 +35,7 @@ class LokasiController extends Controller
      */
     public function store(LokasiStoreRequest $request)
     {
-        $this->authorize('create', Lokasi::class);
+        // $this->authorize('create', Lokasi::class);
 
         $validated = $request->validated();
 
@@ -51,7 +51,7 @@ class LokasiController extends Controller
      */
     public function show(Request $request, Lokasi $lokasi)
     {
-        $this->authorize('view', $lokasi);
+        // $this->authorize('view', $lokasi);
 
         return new LokasiResource($lokasi);
     }
@@ -63,7 +63,7 @@ class LokasiController extends Controller
      */
     public function update(LokasiUpdateRequest $request, Lokasi $lokasi)
     {
-        $this->authorize('update', $lokasi);
+        // $this->authorize('update', $lokasi);
 
         $validated = $request->validated();
 
@@ -79,7 +79,7 @@ class LokasiController extends Controller
      */
     public function destroy(Request $request, Lokasi $lokasi)
     {
-        $this->authorize('delete', $lokasi);
+        // $this->authorize('delete', $lokasi);
 
         $lokasi->delete();
 

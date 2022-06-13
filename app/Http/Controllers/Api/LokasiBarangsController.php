@@ -17,7 +17,7 @@ class LokasiBarangsController extends Controller
      */
     public function index(Request $request, Lokasi $lokasi)
     {
-        $this->authorize('view', $lokasi);
+        // $this->authorize('view', $lokasi);
 
         $search = $request->get('search', '');
 
@@ -37,7 +37,7 @@ class LokasiBarangsController extends Controller
      */
     public function store(Request $request, Lokasi $lokasi)
     {
-        $this->authorize('create', Barang::class);
+        // $this->authorize('create', Barang::class);
 
         $validated = $request->validate([
             'kode_barang' => ['required', 'max:255'],
