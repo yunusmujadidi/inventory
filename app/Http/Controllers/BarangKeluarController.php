@@ -8,8 +8,6 @@ use App\Models\BarangKeluar;
 use Illuminate\Http\Request;
 use App\Http\Requests\BarangKeluarStoreRequest;
 use App\Http\Requests\BarangKeluarUpdateRequest;
-use App\Exports\BarangKeluarExport;
-use Maatwebsite\Excel\Facades\Excel;
 
 class BarangKeluarController extends Controller
 {
@@ -33,11 +31,6 @@ class BarangKeluarController extends Controller
             compact('barangKeluars', 'search')
         );
     }
-
-    public function export()
-	{
-		return Excel::download(new BarangKeluarExport, 'barangkeluar.xlsx');
-	}
 
     /**
      * @param \Illuminate\Http\Request $request

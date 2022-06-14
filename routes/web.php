@@ -12,9 +12,6 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\BarangMasukController;
 use App\Http\Controllers\BarangKeluarController;
-use Maatwebsite\Excel\Facades\Excel;
-use App\Exports\BarangExport;
-use App\Exports\BarangKeluarExport;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,11 +50,3 @@ Route::prefix('/')
         Route::resource('mereks', MerekController::class);
         Route::resource('users', UserController::class);
     });
-
-    //Route::get('export-csv', function () {
-    //    return Excel::download(new BarangExport, 'barang.csv');
-    //    return Excel::download(new BarangKeluarExport, 'barangkeluar.csv');
-    //});
-
-    Route::get('barangs/export/', [BarangController::class, 'export'])->name('export');
-    Route::get('barang-keluars/export/', [BarangKeluarController::class, 'export'])->name('export');

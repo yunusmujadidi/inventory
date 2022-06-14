@@ -9,8 +9,6 @@ use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Http\Requests\BarangStoreRequest;
 use App\Http\Requests\BarangUpdateRequest;
-use App\Exports\BarangExport;
-use Maatwebsite\Excel\Facades\Excel;
 
 class BarangController extends Controller
 {
@@ -31,11 +29,6 @@ class BarangController extends Controller
 
         return view('app.barangs.index', compact('barangs', 'search'));
     }
-
-    public function export()
-	{
-		return Excel::download(new BarangExport, 'barang.xlsx');
-	}
 
     /**
      * @param \Illuminate\Http\Request $request

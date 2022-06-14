@@ -42,10 +42,6 @@
                             </a>
                             @endcan
                         </div>
-                        <div class="md:w-1/2 text-right">
-                            <a href="{{ route('export') }}" class="btn btn-primary">Export Excel</a>
-                            </a>
-                        </div>
                     </div>
                 </div>
 
