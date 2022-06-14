@@ -28,6 +28,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback']);
 
 Route::middleware(['auth:sanctum', 'verified'])
     ->get('/dashboard', function () {

@@ -30,4 +30,10 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'google' => [
+        'client_id' => '255692711043-u17csp2baicfsfjfu4sa9rg28997lnb2.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect' => 'http://marvelaw.com/oauth/google/callback',
+    ],
+
 ];
