@@ -80,65 +80,23 @@
                     </x-jet-nav-link>
                 </div>
                 @endcan
+
+                @can('view-any', Spatie\Permission\Models\Role::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('roles.index') }}">
+                        Roles
+                    </x-jet-nav-link>
+                </div>
+                @endcan
+
+                @can('view-any', Spatie\Permission\Models\Permission::class)
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('permissions.index') }}">
+                        Permissons
+                    </x-jet-nav-link>
+                </div>
+                @endcan
                 
-
-                <x-nav-dropdown title="Apps" align="right" width="48">
-                        @can('view-any', App\Models\Barang::class)
-                        <x-dropdown-link href="{{ route('barangs.index') }}">
-                        Barang
-                        </x-dropdown-link>
-                        @endcan
-                        @can('view-any', App\Models\Supplier::class)
-                        <x-dropdown-link href="{{ route('suppliers.index') }}">
-                        Supplier
-                        </x-dropdown-link>
-                        @endcan
-                        @can('view-any', App\Models\BarangMasuk::class)
-                        <x-dropdown-link href="{{ route('barang-masuks.index') }}">
-                        Barang Masuk
-                        </x-dropdown-link>
-                        @endcan
-                        @can('view-any', App\Models\BarangKeluar::class)
-                        <x-dropdown-link href="{{ route('barang-keluars.index') }}">
-                        Barang Keluar
-                        </x-dropdown-link>
-                        @endcan
-                        @can('view-any', App\Models\Kategori::class)
-                        <x-dropdown-link href="{{ route('kategoris.index') }}">
-                        Kategori
-                        </x-dropdown-link>
-                        @endcan
-                        @can('view-any', App\Models\Lokasi::class)
-                        <x-dropdown-link href="{{ route('lokasis.index') }}">
-                        Lokasi
-                        </x-dropdown-link>
-                        @endcan
-                        @can('view-any', App\Models\Merek::class)
-                        <x-dropdown-link href="{{ route('mereks.index') }}">
-                        Merek
-                        </x-dropdown-link>
-                        @endcan
-                        @can('view-any', App\Models\User::class)
-                        <x-dropdown-link href="{{ route('users.index') }}">
-                        User
-                        </x-dropdown-link>
-                        @endcan
-                </x-nav-dropdown>
-
-                    @if (Auth::user()->can('view-any', Spatie\Permission\Models\Role::class) || 
-                        Auth::user()->can('view-any', Spatie\Permission\Models\Permission::class))
-                    <x-nav-dropdown title="Access Management" align="right" width="48">
-                        
-                        @can('view-any', Spatie\Permission\Models\Role::class)
-                        <x-dropdown-link href="{{ route('roles.index') }}">Roles</x-dropdown-link>
-                        @endcan
-                    
-                        @can('view-any', Spatie\Permission\Models\Permission::class)
-                        <x-dropdown-link href="{{ route('permissions.index') }}">Permissions</x-dropdown-link>
-                        @endcan
-                        
-                    </x-nav-dropdown>
-                    @endif
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
